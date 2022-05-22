@@ -33,7 +33,7 @@ It should create graphics files in the same folder, e.g. `results_random`. Enjoy
 **Step -1**: To use the Spliddit data, you should first ask the team of [spliddit.org](https://spliddit.org/) to send you an SQL dump.
 Then, convert it to an SQLITE database as follows:
 
-    `python mysql_to_sqlite.py <filename>.sql`
+    python mysql_to_sqlite.py <filename>.sql
 
 It should create a file called `<filename>.db`.
 
@@ -43,7 +43,7 @@ It should create a file called `<filename>.db`.
 
 **Step 1**: Edit the file [make_results.py](make_results.py) to control the simulation parameters, e.g.,  path to the results file. Then run the simulation:
 
-    python make_results_random.py
+    python make_results.py
 
 It should create a CSV file containing the results in the specified path, e.g. `results/99sec.csv`.
 
