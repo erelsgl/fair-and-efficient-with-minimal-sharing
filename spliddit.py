@@ -34,6 +34,17 @@ def spliddit_instances(first_id:int=0, application_id=SPLIDDIT_GOODS, remove_dem
     connection.close()
 
 
+def spliddit_instances_ids(first_id:int=0, application_id=SPLIDDIT_GOODS)->list:
+    """
+    Return a list of integers representing instance IDs.
+    """
+    connection = sqlite3.connect(SPLIDDIT_DATABASE_FILE)
+    instances_query = "select id from instances where application_id={} group by id having id>={}".format(application_id,first_id)
+    result = [id[0] for id in query_to_array(connection, instances_query)]
+    connection.close()
+    return result
+
+
 def spliddit_instance(instance_id:int):
     """
     Return a single valuation matrix representing a Spliddit instance.
@@ -107,8 +118,9 @@ def valuation_list_to_valuation_matrix(valuation_list:list, agent_count:int, res
 
 
 if __name__=="__main__":
-    connection = sqlite3.connect(SPLIDDIT_DATABASE_FILE)
-    tables = query_to_array(connection, "select name from sqlite_master where type='table'")
-    print("Tables: ", tables)
-    print(query_to_array(connection, "select distinct(type) from instances"))
-    print("Instances: ", list(spliddit_instances()))
+    # connection = sqlite3.connect(SPLIDDIT_DATABASE_FILE)
+    # tables = query_to_array(connection, "select name from sqlite_master where type='table'")
+    # print("Tables: ", tables)
+    # print(query_to_array(connection, "select distinct(type) from instances"))
+    # print("Instances: ", list(spliddit_instances()))
+    print(spliddit_instances_ids())

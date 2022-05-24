@@ -1,5 +1,5 @@
 numpy
 pandas
 prtpy
-git+https://github.com/erelsgl/fairpy.git
-tee_table
+fairpy @ git+https://github.com/erelsgl/fairpy.git
+experiments

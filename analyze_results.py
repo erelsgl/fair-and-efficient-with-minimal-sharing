@@ -383,6 +383,6 @@ def analysis_for_random_instances():
 
 
 if __name__ == "__main__":
-    folder = "results" # folder = "results_random"
-    results_file = folder+"/999sec.csv" # results_file = folder+"/99sec.csv"
+    folder = "results_random" # "results" # 
+    results_file = folder+"/99sec.csv" # folder+"/999sec.csv" # 
     analysis_for_operations_research_paper(folder, results_file)
