@@ -19,6 +19,7 @@ The experiments are done in two steps: making the results, and analyzing the res
     python make_results_random.py
 
 It should create a CSV file containing the results in the specified path, e.g. `results_random/99sec.csv`.
+NOTE: If the file already exists, the existing experiments will be skipped. If you want to run new experiments, either delete the file or choose a different file name.
 
 **Step 2**: Edit the file [analyze_results.py](analyze_results.py) to control the analysis parameters, e.g., the path to the generated results file. Then analyze the results:
 
@@ -46,6 +47,7 @@ It should create a file called `<filename>.db`.
     python make_results.py
 
 It should create a CSV file containing the results in the specified path, e.g. `results/99sec.csv`.
+NOTE: If the file already exists, the existing experiments will be skipped. If you want to run new experiments, either delete the file or choose a different file name.
 
 **Step 2**: Edit the file [analyze_results.py](analyze_results.py) to control the analysis parameters, e.g., the path to the generated results file. Then analyze the results:
 

@@ -62,9 +62,9 @@ def solve_random_instance(instance_id:int, num_agents:int, num_resources:int, ti
 
 
 if __name__ == "__main__":
-    import logging, experiments
-    experiments.logger.setLevel(logging.INFO)
-    experiment = experiments.Experiment("results_random/", "99sec.csv", "results/backups/")
+    import logging, experiments_csv
+    experiments_csv.logger.setLevel(logging.INFO)
+    experiment = experiments_csv.Experiment("results_random/", "99sec.csv", "results/backups/")
     
     input_ranges = {
         "instance_id": range(20),
