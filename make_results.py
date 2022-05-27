@@ -73,8 +73,8 @@ def solve_single_instance(instance_id, time_limit_in_seconds=998):
 
 if __name__ == "__main__":
     import logging, experiments_csv
-    experiments_csv.logger.setLevel(logging.INFO)
     experiment = experiments_csv.Experiment("results/", "99sec.csv", "results/backups/")
+    experiment.logger.setLevel(logging.INFO)
     input_ranges = {
         "instance_id": spliddit_instances_ids(first_id=203), 
         "time_limit_in_seconds": [99]
