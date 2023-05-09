@@ -11,6 +11,7 @@ from fairpy.allocations import Allocation, AllocationMatrix
 from fairpy.items.min_sharing_impl.FairEnvyFreeAllocationProblem import FairEnvyFreeAllocationProblem
 from fairpy.items.min_sharing_impl.FairProportionalAllocationProblem import FairProportionalAllocationProblem
 from fairpy.items.min_sharing_impl.FairMaxProductAllocationProblem import FairMaxProductAllocationProblem
+from fairpy.items.min_sharing_impl.FairAllocationProblem import ErrorAllocationMatrix
 
 from spliddit import spliddit_instance
 
@@ -25,8 +26,11 @@ logger.setLevel(logging.INFO)
 
 
 def product_of_utilities(allocation:AllocationMatrix, valuation:ValuationMatrix):
-    allocation = Allocation(valuation, allocation)
-    return np.exp(sum(np.log(allocation.utility_profile())))
+    if isinstance(allocation, ErrorAllocationMatrix):
+        return 0
+    else:
+        allocation = Allocation(valuation, allocation)
+        return np.exp(sum(np.log(allocation.utility_profile())))
 
 
 def debug_instance(instance_id, time_limit_in_seconds=1000):
