@@ -5,7 +5,7 @@ Author: Erel Segal-Halevi
 Since:  2020-2021
 """
 
-from fairpy.items.valuations import ValuationMatrix
+from fairpy.valuations import ValuationMatrix
 from fairpy.allocations import Allocation, AllocationMatrix
 
 from fairpy.items.min_sharing_impl.FairEnvyFreeAllocationProblem import FairEnvyFreeAllocationProblem
